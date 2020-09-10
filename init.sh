@@ -14,8 +14,8 @@ cp ./molokai/colors/molokai.vim ~/.vim/colors/
 
 echo "==> Make symbolic link of .vimrc to HOME"
 ln -sfi $SCRIPT_DIR/.vimrc $HOME/.vimrc
-#echo "==> Make symbolic link of .tmux.conf to HOME"
-#ln -sfi $SCRIPT_DIR/.tmux.conf $HOME/.tmux.conf
+echo "==> Make symbolic link of .tmux.conf to HOME"
+ln -sfi $SCRIPT_DIR/.tmux.conf $HOME/.tmux.conf
 
 # ~/.bashrc
 #if grep -q "Morishima-dotfiles" ~/.bashrc

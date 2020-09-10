@@ -14,37 +14,37 @@ cp ./molokai/colors/molokai.vim ~/.vim/colors/
 
 echo "==> Make symbolic link of .vimrc to HOME"
 ln -sfi $SCRIPT_DIR/.vimrc $HOME/.vimrc
-echo "==> Make symbolic link of .tmux.conf to HOME"
-ln -sfi $SCRIPT_DIR/.tmux.conf $HOME/.tmux.conf
+#echo "==> Make symbolic link of .tmux.conf to HOME"
+#ln -sfi $SCRIPT_DIR/.tmux.conf $HOME/.tmux.conf
 
 # ~/.bashrc
-if grep -q "Morishima-dotfiles" ~/.bashrc
-then
+#if grep -q "Morishima-dotfiles" ~/.bashrc
+#then
     # Found
     # Do nothing
     :
-else
+#else
     # Not found
-    echo "==> Append .bashrc to ~/.bashrc"
-    if [ ! -e ~/.bashrc ]; then
-        touch .bashrc
-    fi
-    cat $SCRIPT_DIR/.bashrc >> ~/.bashrc
-fi
+#    echo "==> Append .bashrc to ~/.bashrc"
+#    if [ ! -e ~/.bashrc ]; then
+#        touch .bashrc
+#    fi
+#    cat $SCRIPT_DIR/.bashrc >> ~/.bashrc
+f#i
 
 # ~/.ssh/config
-if grep -q "Morishima-dotfiles" ~/.ssh/config
-then
+#if grep -q "Morishima-dotfiles" ~/.ssh/config
+#then
     # Found
     # Do nothing
     :
-else
-    echo "==> Prepend config to ~/.ssh/config"
-    cat config ~/.ssh/config > ~/.ssh/config_new; mv ~/.ssh/config_new ~/.ssh/config
-fi
+#else
+#    echo "==> Prepend config to ~/.ssh/config"
+#    cat config ~/.ssh/config > ~/.ssh/config_new; mv ~/.ssh/config_new ~/.ssh/config
+#fi
 
 # ~/.ssh/rc
-echo "==> Copy rc to ~/.ssh/rc"
-cp ./rc ~/.ssh/
+#echo "==> Copy rc to ~/.ssh/rc"
+#cp ./rc ~/.ssh/
 
 echo "---- MY WORK IS DONE! ----"

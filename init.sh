@@ -14,23 +14,28 @@ cp ./molokai/colors/molokai.vim ~/.vim/colors/
 
 echo "==> Make symbolic link of .vimrc to HOME"
 ln -sfi $SCRIPT_DIR/.vimrc $HOME/.vimrc
+source $HOME/.vimrc
+
 echo "==> Make symbolic link of .tmux.conf to HOME"
 ln -sfi $SCRIPT_DIR/.tmux.conf $HOME/.tmux.conf
+tmux source  $HOME/.tmux.conf
 
 # ~/.bashrc
-#if grep -q "Morishima-dotfiles" ~/.bashrc
-#then
+if grep -q "hiraga-dotfiles" ~/.bashrc
+then
     # Found
     # Do nothing
     :
-#else
+else
     # Not found
-#    echo "==> Append .bashrc to ~/.bashrc"
-#    if [ ! -e ~/.bashrc ]; then
-#        touch .bashrc
-#    fi
-#    cat $SCRIPT_DIR/.bashrc >> ~/.bashrc
-f#i
+    echo "==> Append .bashrc to ~/.bashrc"
+    if [ ! -e ~/.bashrc ]; then
+        touch .bashrc
+    fi
+	cat $SCRIPT_DIR/.bashrc >> ~/.bashrc
+	source ~/.bashrc
+
+fi
 
 # ~/.ssh/config
 #if grep -q "Morishima-dotfiles" ~/.ssh/config
